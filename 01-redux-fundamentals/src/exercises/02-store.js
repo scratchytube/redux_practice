@@ -6,3 +6,8 @@ import reducer from "./01-reducer";
 // ✅ use the createStore function to create a store and pass in the reducer function from the previous lesson
 
 // ✅ export the store as the default export
+
+
+const store = createStore(reducer)
+
+export default store
