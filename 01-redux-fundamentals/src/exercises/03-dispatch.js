@@ -4,11 +4,13 @@ function setupEvents(store) {
   document.querySelector("#increment").addEventListener("click", () => {
     // ✅ when the increment button is clicked, dispatch an action object with a type of "counter/incremented"
     store.dispatch({type: "counter/incremented"})
+    console.log(store.getState())
   });
 
   document.querySelector("#decrement").addEventListener("click", () => {
     // ✅ when the decrement button is clicked, dispatch an action object with a type of "counter/decremented"
     store.dispatch({type: "counter/decremented"})
+    console.log(store.getState())
   });
 }
 
