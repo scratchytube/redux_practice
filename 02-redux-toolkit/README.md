@@ -112,13 +112,13 @@ const counterSlice = createSlice({
   reducers: {
     incremented(state) {
       // mutation is allowed because of immer.js
-      state = state + 1;
+      state.value = state.value + 1;
     },
     decremented(state) {
-      state = state - 1;
+      state.value = state.value - 1;
     },
     incrementedBy(state, action) {
-      state = state + action.payload;
+      state.value = state.value + action.payload;
     },
   },
 });

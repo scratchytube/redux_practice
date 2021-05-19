@@ -13,11 +13,15 @@ const userSlice = createSlice({
   reducers: {
     addTenDollars(state) {
       // ✅ update the budget by adding 10
+      state.budget += 10
     },
     purchaseItem(state, action) {
       // ✅ update the budget by subtracting action.payload.price
       // make sure to check if the item has already been purchased before updating the budget!
       // use action.payload.isPurchase to determine if the item is already purchased
+      if (!action.payload.isPurchase) {
+       state.budget -= action.payload.price 
+      }
     },
   },
 });
