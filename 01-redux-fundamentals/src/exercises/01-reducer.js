@@ -14,8 +14,31 @@ function reducer(state = initialState, action) {
         ...state,
         value: state.value - 1,
       };
+      case "counter/incrementedBy":
+        return {
+          ...state,
+          value: state.value + action.payload,
+        }
     default:
       return state;
+  }
+}
+
+function incremented() {
+  // ✅ return an object with a type of "counter/incremented"
+  return {
+    type: "counter/incremented"
+  }
+}
+
+function decremented() {
+  // ✅ return an object with a type of "counter/decremented"
+}
+
+function incrementedBy(amount) {
+  return {
+    type: "counter/incrementedBy",
+    payload: amount,
   }
 }
 

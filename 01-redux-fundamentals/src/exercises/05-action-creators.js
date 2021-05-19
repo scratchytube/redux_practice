@@ -1,5 +1,8 @@
 function incremented() {
   // ✅ return an object with a type of "counter/incremented"
+  return {
+    type: "counter/incremented"
+  }
 }
 
 function decremented() {
