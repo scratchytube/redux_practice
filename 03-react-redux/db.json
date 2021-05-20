@@ -33,7 +33,7 @@
       "name": "Swiss Cheese",
       "category": "Deli",
       "price": 4,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 6,
