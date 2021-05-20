@@ -4,21 +4,18 @@ import Header from "./Header";
 import ItemForm from "./ItemForm";
 import ShoppingList from "./ShoppingList";
 import ShoppingCart from "./ShoppingCart";
-// ✅ import the addItems action from the itemsSlice
+import { addItems } from '../redux/itemsSlice'
 
 function App() {
-  // ✅ use the useSelector hook to get the isDarkMode value from Redux state
-  // replace this variable with the value returned by useSelector
-  const isDarkMode = true;
-
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode)
   const dispatch = useDispatch();
 
-  // populate store
   useEffect(() => {
     fetch("http://localhost:3000/items")
       .then((r) => r.json())
       .then((items) => {
-        // ✅ use the addItem action imported above to dispatch the items to the store
+        dispatch(addItems(items))
+       
       });
   }, [dispatch]);
 
